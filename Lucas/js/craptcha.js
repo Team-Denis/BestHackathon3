@@ -28,6 +28,7 @@ function gen_captcha(char_list) {
 }
 
 function display_captcha(context, captcha_txt) {
+    context.clearRect(0, 0, width, height);
     context.fillText(captcha_txt, (width - ctx.measureText(captcha_txt).width)/2, height/2);
 }
 
