@@ -91,7 +91,7 @@ function checkPassword() {
     }
 
     if (countValid === rules.length) {
-        alert("Success !\nFragment 3/4: " + fragment);
+        alert("Success !\nFragment de 💨 3/4: " + fragment);
         window.location.href = "passwordGameSuccess.html";
     }
     

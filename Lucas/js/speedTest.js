@@ -16,7 +16,7 @@ function keyPressHandler(event) {
         const user_input = document.getElementById('email-input').value;
         
         if (checkValidEmail(user_input)) {
-            alert("Success !\nFragment 2/4: " + fragment);
+            alert("Success !\nFragment de 💨 2/4: " + fragment);
             window.location.href = 'speedTestSuccess.html';
         } else {
             alert('Invalid email');

@@ -24,7 +24,6 @@ function gen_captcha(char_list) {
         out += temp_list[randomIndex];
         temp_list.splice(randomIndex, 1); // Remove the selected character from the list
     }
-    console.log(out);
     return out;
 }
 
@@ -43,7 +42,7 @@ function verify_captcha() {
     }
 
     if (validation_counter === 0) {
-        alert("Success !\nFragment 1/4 : " + fragment);
+        alert("Success !\nFragment de 💨 1/4 : " + fragment);
         window.location.href = "../pages/craptchaSuccess.html";
     }
  

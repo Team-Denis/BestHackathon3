@@ -47,7 +47,7 @@ function keyTranslate(e) {
 
 function checkSentence() {
     if (inputBox.value === correctSentence) {
-        alert("Success !\nFragment 4/4: " + fragment);
+        alert("Success !\nFragment de 💨 4/4: " + fragment);
         window.location.href = "keyRemapSuccess.html";
     } else {
         alert("Incorrect!");
