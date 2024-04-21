@@ -201,6 +201,9 @@ class ShuffleGame:
     def verifyAnswer(self) -> None:
         
         self.freeze = True
+        
+        a = self.highlight_numbers()
+        self.win.update()
         userInput: str = self.win.textinput("H3LL", "Entrez le numéro de la clé de départ :")
         
         try: 
@@ -237,6 +240,8 @@ class ShuffleGame:
             self.t = random.randint(1, 10)
             self.highlight(self.t)
         
+        a.clear()
+        del a
         self.freeze = False
   
     def highlight(self, id: int) -> None:
@@ -263,7 +268,26 @@ class ShuffleGame:
             full_swap_task.append(self.createSwap(p[0], p[1], self.speed[self.streak]))
             
         return full_swap_task
+  
+    def highlight_numbers(self):
+        
+        self.freeze = True
+        
+        temp_turt = turtle.Turtle()
+        temp_turt.hideturtle()
+        
+        for coord, data in self.lookup_dict.items():
             
+            if data != 10: self.goto(temp_turt, coord[0] - 7, coord[1] - 5)
+            else: self.goto(temp_turt, coord[0] - 13, coord[1] - 5)
+            
+            print(data, coord)
+            temp_turt.write(f'{data}', font=("Arial", 20, "normal"))
+            self.win.update()
+        
+        self.freeze = False
+        return temp_turt
+    
     @staticmethod
     def createPermutation():
 
