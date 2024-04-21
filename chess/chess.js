@@ -210,6 +210,7 @@ function algebraic(square) {
 function swapColor(color) {
     return color === WHITE ? BLACK : WHITE;
 }
+document.cookie = "sus=Fragments de feu [3/3] = 5590"
 export function validateFen(fen) {
     // 1st criterion: 6 space-seperated fields?
     const tokens = fen.split(/\s+/);
