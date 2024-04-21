@@ -1,0 +1,14 @@
+{
+  "name": "pablo",
+  "version": "0.1.0",
+  "files": [
+    "pablo_bg.wasm",
+    "pablo.js",
+    "pablo.d.ts"
+  ],
+  "module": "pablo.js",
+  "types": "pablo.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
