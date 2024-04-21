@@ -47,15 +47,11 @@ impl Search {
             }
         }
 
-        //self.tt.insert(board, depth, Node::Exact(alpha));
-
         best_move
     }
 
     fn quiesce(&self, board: &Board, alpha: i32, beta: i32) -> i32 {
-        // board.get_hash();
         let mut alpha = alpha;
-
         let stand_pat = eval(board);
         if stand_pat >= beta {
             return beta;
