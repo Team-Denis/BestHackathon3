@@ -1,0 +1,55 @@
+:root {
+    --bg-color: #212F3C;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.captcha-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    height:auto;
+}
+
+.captcha-text {
+    display: block;
+    background-image: url("../images/craptcha_background.png");
+    background-size: 200%;
+    background-position: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 1px;
+}
+
+.captcha-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 25%;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 1px;
+    text-align: center;
+}
+
+.captcha-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 25%;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 1px;
+    background-color: #3498DB;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
