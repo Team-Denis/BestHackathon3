@@ -20,6 +20,7 @@ features = [
     'MessageEvent',
     'Window',
     'Worker',
+    'console',
 ]
 
 [profile.release]
