@@ -1,5 +1,6 @@
 const timeLimit = 1000;
 var counter = timeLimit;
+const fragment = 3617;
 
 function checkValidEmail(email) {
     return String(email)
@@ -15,6 +16,7 @@ function keyPressHandler(event) {
         const user_input = document.getElementById('email-input').value;
         
         if (checkValidEmail(user_input)) {
+            alert("Success !\nFragment 2/4: " + fragment);
             window.location.href = 'speedTestSuccess.html';
         } else {
             alert('Invalid email');

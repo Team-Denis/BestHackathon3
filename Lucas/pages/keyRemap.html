@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Remap</title>
+    <link rel="stylesheet" href="../styles/keyRemap.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Keyboard remap</h1>
+        <p>Write the following sentence in the input box...</p>
+        <p>...a mischievous leprechaun may have remapped your keyboard layout</p>
+    </div>
+
+    <div class="input">
+        <input type="text" id="input" placeholder="Copy the sentence here" onpaste="return false;" ondrop="return false;" autocomplete="off">
+        <button id="submit">Submit</button>
+        <h1 id="sentence">"un farfadet malicieux a remap les touches de ton clavier"</h1>
+    </div>
+
+    <script src="../js/keyRemap.js"></script>
+</body>
+
+</html>
