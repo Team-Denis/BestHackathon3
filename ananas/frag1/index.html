@@ -11,6 +11,7 @@
       href="style.css"
     />
     <link rel="shortcut icon" href="https://adventofcode.com/favicon.png" />
+  </head>
   <body>
     <header>
       <div>
@@ -98,8 +99,8 @@
         >.
       </p>
       <form
-        method="post"
-        action="https://adventofcode.com/2023/day/16/answer"
+        id="submit-form"
+        action=""
       >
         <input type="hidden" name="level" value="1" />
         <p>
@@ -107,6 +108,7 @@
           <input
             type="text"
             name="answer"
+            id="answer"
             autocomplete="off"
           />
           <input
@@ -117,4 +119,6 @@
       </form>
     </main>
   </body>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js" async></script>
+  <script src="script.js"></script>
 </html>
