@@ -4,8 +4,9 @@ from PIL import Image
 
 # change working directory
 import os
-os.chdir("ant_code/image_obsfucation")
+# os.chdir("ant_code/image_obsfucation")
 
+# In[2]:
 image = imread('data/img_V2.png')[:, :, 0:3]
 
 
@@ -16,14 +17,13 @@ with open('output/encoded_image.BMP', 'wb') as f:
     # encode BMP image
     Image.fromarray(image).save(f, 'BMP')
 
-code_encode = r"Voila un des 2 codes secrets  5739 BTW j'adore les 100Hz wink wink"
+code_encode = r"Un des 2 fragment eau 5739 BTW j'adore le 50Hz wink wink"
 # convert code to binary string forcing it to be 8 bits long
 caracters_values = [ord(c) for c in code_encode]
 for value in caracters_values:
     assert value < 256
 code_string = ''.join([format(c, '08b') for c in caracters_values])
 print(code_string)
-code_string = code_string +  format(4, '08b')
 code_string
 
 # In[8]:
@@ -43,8 +43,6 @@ def encode_bit(bit, pixel_value):
     if bit == 1:
         if pixel_value % 2 == 0:
             return pixel_value + 1
-        elif pixel_value == 255:
-            return pixel_value - 1
         else:
             return pixel_value
     else:
@@ -52,8 +50,12 @@ def encode_bit(bit, pixel_value):
             return pixel_value
         elif pixel_value == 0:
             return pixel_value + 1
+        elif pixel_value == 255:
+            return pixel_value - 1
         else:
             return pixel_value - 1
+
+
 
 # In[11]:
 
@@ -119,7 +121,7 @@ loaded_image.shape
 
 decoded_bits = decode_image(image)
 decoded_string = to_string(decoded_bits)
-decoded_string.strip("\x00"), len(decoded_string)
+print(decoded_string.strip("\x00"), len(decoded_string))
 
 
 # In[ ]:
