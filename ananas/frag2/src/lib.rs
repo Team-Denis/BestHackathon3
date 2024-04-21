@@ -63,7 +63,7 @@ impl Engine {
             match self.board.status() {
                 BoardStatus::Checkmate => {
                     self.state = GameState::WhiteWon;
-                    return format!("white-win {}", 0xCAFEBABE);
+                    return format!("white-win {}", 4311);
                 }
                 BoardStatus::Stalemate => {
                     self.state = GameState::Draw;
