@@ -5,8 +5,11 @@ mod transposition;
 
 use crate::search::Search;
 use chess::{Board, BoardStatus, ChessMove};
-use std::{cell::RefCell, rc::Rc, str::FromStr};
+use std::str::FromStr;
+use rand::seq::SliceRandom;
 use wasm_bindgen::prelude::*;
+
+const START_POS: [&str; 5] = ["rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6", "rnbqkb1r/pp3ppp/3p1n2/2pP4/8/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 6", "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4", "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6", "r1bqkb1r/4nppp/p1np4/1p1Np3/4P3/N7/PPP2PPP/R1BQKB1R w KQkq - 2 9"];
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum GameState {
@@ -26,10 +29,17 @@ pub struct Engine {
 impl Engine {
     #[wasm_bindgen]
     pub fn new() -> Engine {
+        let mut rng = rand::thread_rng();
+
         Engine {
-            board: Board::default(),
+            board: Board::from_str(START_POS.choose(&mut rng).unwrap()).unwrap(),
             state: GameState::Playing,
         }
+    }
+
+    #[wasm_bindgen]
+    pub fn pos(&self) -> String {
+        self.board.to_string()
     }
 
     #[wasm_bindgen]
@@ -53,7 +63,7 @@ impl Engine {
             match self.board.status() {
                 BoardStatus::Checkmate => {
                     self.state = GameState::WhiteWon;
-                    return "white-win".to_string();
+                    return format!("white-win {}", 0xCAFEBABE);
                 }
                 BoardStatus::Stalemate => {
                     self.state = GameState::Draw;
@@ -62,12 +72,10 @@ impl Engine {
                 _ => (),
             }
 
-            // let mut tt = TranspositionTable::new();
-            // tt.set_size(0x4000000);
             let mut search = Search::new();
 
             let reply = search
-                .iterative_search(&self.board, 5)
+                .iterative_search(&self.board, 4)
                 .expect("Search error!");
 
             self.board = self.board.make_move_new(reply);
@@ -75,13 +83,13 @@ impl Engine {
             match self.board.status() {
                 BoardStatus::Checkmate => {
                     self.state = GameState::BlackWon;
-                    return "black-win".to_string();
+                    format!("black-win {reply}")
                 }
                 BoardStatus::Stalemate => {
                     self.state = GameState::Draw;
-                    return "draw".to_string();
+                    format!("draw {reply}")
                 }
-                _ => return reply.to_string(),
+                _ => reply.to_string(),
             }
         } else {
             "not-playing".to_string()

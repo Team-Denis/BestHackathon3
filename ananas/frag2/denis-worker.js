@@ -4,6 +4,8 @@ await init();
 // And afterwards we can use all the functionality defined in wasm.
 let engine = Engine.new();
 
+postMessage("f" + engine.pos())
+
 onmessage = (move) => {
     postMessage(engine.play_move(move.data));
 }
