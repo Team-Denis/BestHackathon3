@@ -2,6 +2,8 @@ var canvas = document.getElementById("captcha");
 console.log(canvas);
 var ctx = canvas.getContext("2d");
 
+const fragment = 4390;
+
 const width = canvas.width
 const height = canvas.height
 
@@ -9,13 +11,10 @@ ctx.font = "normal 36px Verdana";
 ctx.fillStyle = "#000000"
 ctx.textAlign = "left"
 
-var character_list = ["🈵", "👹", "👽", "😁", "😘", "😨"]
-const CAPTCHA_LENGTH = 4;
+var character_list = ["🈵", "👹", "👽", "😁", "😘", "😨", "☕", "📅", "📆", "📗", "📘", "📙", "🔡", "🔠", "🕑", "🕒", "🕗", "🕘", "🗿", "📈", "📉"]
+const CAPTCHA_LENGTH = 6;
 var captcha_txt;
-var validation_counter = 3;
-
-// const txt = character_list.join("");
-// ctx.fillText(txt, width/2 - ctx.measureText(txt).width/2, height/2)
+var validation_counter = 5;
 
 function gen_captcha(char_list) {
     let out = '';
@@ -44,6 +43,7 @@ function verify_captcha() {
     }
 
     if (validation_counter === 0) {
+        alert("Success !\nFragment 1/4 : " + fragment);
         window.location.href = "../pages/craptchaSuccess.html";
     }
  

@@ -1,4 +1,5 @@
 const list = document.getElementById('list');
+const fragment = 6670;
 
 function romanToNumber(roman) {
     const romanNumerals = {
@@ -34,6 +35,7 @@ var rulesIndication = [
     "One brand among 'pepsi', 'starbucks' and 'shell'",
     "Roman numerals need to multiply to 35",
     "Solve the chess problem in the image and add the first best move in the password",
+    "Today's Wordle solution",
 ]
 
 var rules = [
@@ -70,6 +72,7 @@ var rules = [
         return (product===35);
     },
     (password) => /rh4\+/.test(password.toLowerCase()),
+    (password) => password.toLowerCase() === "jolly",
 ]
 
 function checkPassword() {
@@ -88,6 +91,7 @@ function checkPassword() {
     }
 
     if (countValid === rules.length) {
+        alert("Success !\nFragment 3/4: " + fragment);
         window.location.href = "passwordGameSuccess.html";
     }
     

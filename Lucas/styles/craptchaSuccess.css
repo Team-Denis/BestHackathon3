@@ -14,14 +14,6 @@ body {
     height:auto;
 }
 
-.fragment {
-    display: block;
-    position: fixed;
-    bottom : 25%;
-    width: 100%;
-    text-align: center;
-    color : white;
-}
 
 .next-button {
     display: block;
