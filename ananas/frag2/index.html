@@ -7,8 +7,38 @@
       integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
   </head>
-  <body>
+  <body class="surface">
+    <div class="board">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Chess</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Restore"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body" style="width: 50em" id="board1"></div>
+      </div>
+    </div>
+
+    <img src="clippy-think.gif" alt="Clippy" id="clippy" />
+
+    <div class="window" id="clippy-talk" style="margin: 32px; width: 250px">
+      <div class="title-bar">
+        <div class="title-bar-text">Pablo the engine</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Restore"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+        <div class="window-body" id="clippy-dialog"></div>
+      </div>
+    </div>
+
     <!-- Note the usage of `type=module` here as this is an ES6 module -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -24,3 +54,24 @@
     <script type="module" src="script.js"></script>
   </body>
 </html>
+
+<style>
+  .board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  #clippy {
+    position: fixed;
+    top: 30;
+    right: 75;
+  }
+
+  #clippy-talk {
+    position: fixed;
+    top: 230;
+    right: 30;
+  }
+</style>
