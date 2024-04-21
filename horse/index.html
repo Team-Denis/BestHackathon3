@@ -1,0 +1,99 @@
+
+<div id="timer"></div>
+<pre>
+   ,
+_,,)\.~,,._
+(()`  ``)\))),,_
+ |     \ ''((\)))),,_          ____
+ |6`   |   ''((\())) "-.____.-"    `-.-,
+ |    .'\    ''))))'                  \)))
+ |   |   `.     ''                     ((((
+ \, _)     \/                          |))))
+  `'        |                          (((((
+            \                  |       ))))))
+             `|    |           ,\     /((((((
+              |   / `-.______.<  \   |  )))))
+              |   |  /         `. \  \  ((((
+              |  / \ |           `.\  | (((
+              \  | | |             )| |  ))
+               | | | |             || |  '
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |                  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |                  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |  
+	       | | | |             || |                  
+</pre>
+<script>
+document.addEventListener( 'scroll', function () {
+  var pre = document.querySelector( 'pre' );
+  pre.innerText = pre.innerText + '	       | | | |             || |  \n	       | | | |             || |  \n	       | | | |             || |  \n'
+});
+
+let timer = 20
+
+document.getElementById("timer").innerText = timer.toString();
+
+setInterval(() => {
+    timer -= 1;
+
+    if (timer == 0) {
+        window.scrollTo(0, 0)
+        location.reload()
+    }
+
+    document.getElementById("timer").innerText = timer.toString();
+}, 1000)
+
+</script>
+<style>
+    pre {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    #timer {
+        position: fixed;
+        top: 20;
+        right: 20;
+        font-size: 3em;
+        font-weight: bold;
+        color: red;
+    }
+</style>

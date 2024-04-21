@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://adventofcode.com/2023/day/16 -->
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Jour 1917 - Advent of Code 2023</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css"
+    />
+    <link rel="shortcut icon" href="https://adventofcode.com/favicon.png" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1 class="title-global">
+          <a href="https://adventofcode.com/">Advent of Code</a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="https://adventofcode.com/2023/about">[About]</a></li>
+            <li><a href="https://adventofcode.com/2023/events">[Events]</a></li>
+            <li>
+              <a
+                href="https://teespring.com/stores/advent-of-code"
+                target="_blank"
+                >[Shop]</a
+              >
+            </li>
+            <li>
+              <a href="https://adventofcode.com/2023/settings">[Settings]</a>
+            </li>
+            <li>
+              <a href="https://adventofcode.com/2023/auth/logout">[Log Out]</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <h1 class="title-event">
+          &nbsp;&nbsp;&nbsp;<span class="title-event-wrap">sub y{</span
+          ><a href="https://adventofcode.com/2023">2023</a
+          ><span class="title-event-wrap">}</span>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="https://adventofcode.com/2023">[Calendar]</a></li>
+            <li><a href="https://adventofcode.com/2023/support">[AoC++]</a></li>
+            <li>
+              <a href="https://adventofcode.com/2023/sponsors">[Sponsors]</a>
+            </li>
+            <li>
+              <a href="https://adventofcode.com/2023/leaderboard"
+                >[Leaderboard]</a
+              >
+            </li>
+            <li><a href="https://adventofcode.com/2023/stats">[Stats]</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="sidebar">
+      <div id="sponsor">
+        <div class="quiet">
+          Our <a href="https://adventofcode.com/2023/sponsors">sponsors</a> help
+          make Advent of Code possible:
+        </div>
+        <div class="sponsor">
+          <a>Lunch Garden</a>
+          - <br> Il est temps de s'attabler ensemble
+        </div>
+      </div>
+    </div>
+    <!--/sidebar-->
+
+    <main>
+      <article class="day-desc">
+        <h2>--- Jour 1917: Le Tri de Staline à l'Atelier du Père Noël ---</h2>
+        <p>
+          Le Père Noël se prépare pour sa tournée annuelle, mais un problème est survenu : les cadeaux ne sont pas triés ! Les lutins, étant des amateurs de défis informatiques, ont décidé de trier les cadeaux en utilisant une méthode peu conventionnelle appelée <em>Staline Sort</em>.
+        </p>
+        <p>
+          Le <em>Staline Sort</em> est un algorithme de tri par élimination. Il passe à travers les éléments d'une liste, et à chaque fois qu'un élément est trouvé qui ne suit pas l'ordre croissant, il est envoyé au goulag en Sybérie. Seule une liste ordonnée est conservée à la fin.
+        </p>
+        <p>
+          Votre mission est de créer une fonction pour aider les lutins à trier les cadeaux en utilisant le <em>Staline Sort</em> et qui retourne la somme des éléments. Par exemple l'entrée:
+          <pre><code>10 5 1 8 15 6 19</code></pre>
+
+          doit avoir <em><code>44</code></em> en sortie.
+        </p>
+      </article>
+      <p>
+        Pour commencer,
+        <a href="input.txt" target="_blank"
+          >obtenir l'entrée du puzzle</a
+        >.
+      </p>
+      <form
+        id="submit-form"
+        action=""
+      >
+        <input type="hidden" name="level" value="1" />
+        <p>
+          Réponse:
+          <input
+            type="text"
+            name="answer"
+            id="answer"
+            autocomplete="off"
+          />
+          <input
+            type="submit"
+            value="[Submit]"
+          />
+        </p>
+      </form>
+      <p id="next"></p>
+    </main>
+  </body>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js" async></script>
+  <script src="script.js"></script>
+</html>
