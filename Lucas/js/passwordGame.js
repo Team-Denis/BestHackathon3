@@ -1,5 +1,5 @@
 const list = document.getElementById('list');
-const fragment = 6670;
+const fragment = 2907;
 
 function romanToNumber(roman) {
     const romanNumerals = {

@@ -27,7 +27,7 @@ const keyRemap = {
     "z": "m",
 };
 
-const fragment = 4157;
+const fragment = 1501;
 
 const inputBox = document.getElementById("input");
 const submitButton = document.getElementById("submit");

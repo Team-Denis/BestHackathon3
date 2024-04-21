@@ -2,7 +2,7 @@ var canvas = document.getElementById("captcha");
 console.log(canvas);
 var ctx = canvas.getContext("2d");
 
-const fragment = 4390;
+const fragment = 4269;
 
 const width = canvas.width
 const height = canvas.height
