@@ -35,11 +35,11 @@ async function run() {
     document.getElementById("clippy-dialog").innerHTML = `
         <div id="clippy-win">
           <p>@!~&^&*^$&#</p>
-          <p>Fragment de 🔥 [2/2] = ${frag}</p>
+          <p>Fragment de 🔥 [2/3] = ${frag}</p>
           <section
             class="field-row"
             style="justify-content: flex-end"
-            onclick="window.location.href = '/'"
+            onclick="window.location.href = '../sus'"
           >
             <button>Suite</button>
           </section>
